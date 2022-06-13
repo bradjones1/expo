@@ -66,6 +66,8 @@ export async function instantiateMetroAsync(
     // @ts-expect-error: TODO: Update the types.
     hmrEnabled: true,
     websocketEndpoints,
+    // Ensures that the resulting URLs (e.g., websocket debugging) are IPv4, for maximum compatibility.
+    host: "0.0.0.0",
   });
 
   if (attachToServer) {
